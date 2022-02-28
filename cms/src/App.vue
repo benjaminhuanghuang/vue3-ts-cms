@@ -1,28 +1,42 @@
 <template>
- <div class="app">
-   <router-link to="/login">Login</router-link>
-   <router-link to="/mian">Main</router-link>
-   <router-view></router-view>
- </div>
+  <div class="app">
+    <router-link to="/login">Login</router-link>
+    <router-link to="/main">Main</router-link>
+    <router-view/>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "App",
-  components: {
+  name: 'App',
+  props: {
+    name: {
+      type: String,
+    },
   },
 });
 </script>
-
-<style lang="less">
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
